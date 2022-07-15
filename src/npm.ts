@@ -94,6 +94,10 @@ export const npm = {
       if (options.dryRun) {
         command.push("--dry-run");
       }
+      
+      if (options.registry) {
+        command.push("--registry",options.registry)
+      }
 
       // Run "npm publish" in the package.json directory
       let cwd = resolve(dirname(options.package));
